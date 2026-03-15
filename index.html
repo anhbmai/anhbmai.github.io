@@ -2,49 +2,38 @@
 <html lang="en">
 
 <head>
-   <title>A Murder Mystery</title>
-   <style>
-      body {
-         background-image: 
-            url('bg1.jpg');
-	 background-scale: cover;
-         background-repeat: 
-         background-position: center;
-         justify-content: center;
-         align-items: center;
-         display: flex;
-      }
-  
-   </style>
-	
-</head>
+<title>A Murder Mystery</title>
+
 <style>
-body{
-  margin:0;
-  height:70vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  Text-align:center;
+
+body {
+  margin: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: white;
 }
-</style>
 
-<body>
-   <div>
-      <h1><font color = "#FFFFFF"><font size = "7">Solve a Murder Mystery?</font></h1>
-	<p>Whodunit? (1) Who killed Belle Stuttgart? (2) How was it done? (3) What was the motive?</p>
-     <p>
-  <button class="big-button" onclick="window.location.href='case1.html'">
-    Yes !!!
-  </button>
+/* fixed full-screen background */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-  <button class="small-button" onclick="window.location.href='no.html'">
-    No.
-  </button>
+  background-image: url("bg1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-</p>
+  z-index: -1;
+}
 
-<style>
 .big-button {
   padding: 15px 30px;
   font-size: 18px;
@@ -58,7 +47,32 @@ body{
   cursor: pointer;
   border-radius: 8px;
 }
+
 </style>
 
+</head>
 
+<body>
+
+<div class="background"></div>
+
+<div>
+  <h1 style="font-size:70px;">Solve a Murder Mystery?</h1>
+
+  <p>
+  Whodunit? (1) Who killed Belle Stuttgart? (2) How was it done? (3) What was the motive?
+  </p>
+
+  <p>
+    <button class="big-button" onclick="window.location.href='case1.html'">
+      Yes !!!
+    </button>
+
+    <button class="small-button" onclick="window.location.href='no.html'">
+      No.
+    </button>
+  </p>
+</div>
+
+</body>
 </html>

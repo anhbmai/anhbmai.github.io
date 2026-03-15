@@ -3,6 +3,8 @@
 <head>
 <title>Late That Afternoon</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 body {
   text-align: center;
@@ -11,18 +13,22 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
-  margin-top: 80px;
+  color: black;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
 }
 
 h1 {
-  font-size: 42px;
+  font-size: clamp(32px, 6vw, 42px);
 }
 
 p {
-  font-size: 22px;
-  max-width: 700px;
-  margin: auto;
+  font-size: 20px;
   line-height: 1.6;
 }
 
@@ -43,11 +49,13 @@ button {
 
 <body>
 
+<div class="container">
+
 <h1>Late that afternoon...</h1>
 
 <p>
-No one skied that day. Late that afternoon, Gretel sat in the lounge with her only living female guest, Belle Stuttgart.  
-"I hope you don't mind her being in the bedroom next to yours," Gretel said. "We had no other place to put her."  
+No one skied that day. Late that afternoon, Gretel sat in the lounge with her only living female guest, Belle Stuttgart.
+"I hope you don't mind her being in the bedroom next to yours," Gretel said. "We had no other place to put her."
 </p>
 
 <p>
@@ -64,6 +72,8 @@ Nearly six o'clock. "I think I need some fresh air," Belle said nervously and wa
 
 <div class="button-container">
   <button onclick="window.location.href='themurder.html'">The Murder...</button>
+</div>
+
 </div>
 
 </body>

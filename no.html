@@ -3,21 +3,42 @@
 
 <head>
 <title>Suspicious...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+
 body {
-  background-image: url("bg1.jpg");
-  background-size: cover;
-  background-position: center;
+  margin: 0;
   font-family: Arial, sans-serif;
   color: white;
   text-align: center;
 }
 
+/* full screen background */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("bg1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* center content vertically */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
-  font-size: 6;
-  margin-top: 200px;
-  margin-left: px; /* moves heading a little to the left */
+  font-size: clamp(40px, 8vw, 70px);
 }
 
 button {
@@ -27,19 +48,24 @@ button {
   border-radius: 8px;
   cursor: pointer;
 }
+
 </style>
 
 </head>
 
 <body>
 
-<h1>Why are you so defensive?<br>Are you the murderer?</h1>
+<div class="background"></div>
 
-<br>
+<div class="container">
+
+<h1>Why are you so defensive?<br>Are you the murderer?</h1>
 
 <button onclick="window.location.href='case1.html'">
 Fine... I will investigate
 </button>
+
+</div>
 
 </body>
 </html>

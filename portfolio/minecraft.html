@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Art</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #e8b8c2, #efe9c9);
+      color: #222;
+      text-align: center;
+    }
+
+    .header {
+      background: #f5f5f5;
+      padding: 40px 20px 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 48px;
+      letter-spacing: 4px;
+    }
+
+    .nav {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      align-items: center;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+
+    .dropbtn {
+      text-decoration: none;
+      color: #444;
+      font-size: 18px;
+      letter-spacing: 2px;
+      padding: 10px;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      min-width: 220px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      z-index: 999;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f2f2f2;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .other-art {
+      color: #b5b5b5;
+      text-decoration: none;
+    }
+
+    .other-art:hover {
+      color: #888;
+    }
+
+    .content {
+      max-width: 950px;
+      margin: 50px auto 70px;
+      padding: 0 24px;
+    }
+
+    .page-title {
+      font-family: Georgia, serif;
+      font-size: 42px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .art-image {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+      margin: 0 auto 35px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    }
+
+    .description {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    .description p {
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .header h1 {
+        font-size: 34px;
+      }
+
+      .nav {
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .page-title {
+        font-size: 32px;
+      }
+
+      .description {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>ANH MAI'S PORTFOLIO</h1>
+
+    <div class="nav">
+      <div class="dropdown">
+        <a href="index.html" class="dropbtn">ART 74</a>
+        <div class="dropdown-content">
+          <a href="glitch.html">Glitch Art</a>
+          <a href="meme.html">Meme Mashup</a>
+          <a href="netart.html">Net Art</a>
+          <a href="minecraft.html">Minecraft Art</a>
+        </div>
+      </div>
+
+      <a href="otherart.html" class="other-art">OTHER ART</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="page-title">MINECRAFT ART</div>
+
+    <img src="totoro.JPG" alt="Minecraft Totoro Art" class="art-image">
+
+    <div class="description">
+      
+      <p>
+        My sculpture is the character Totoro from the movie "My neighbor Totoro". This character represents Ghibli Studio, which also represents my childhood. I feel like a lot of kids grew up watching Ghibli movies such as "Spirited Away", "Ponyo"... and this specific character - Totoro -  can be recognized by a lot of people. I loved him as a kid so I decided to build him in Minecraft. This is my first time building in Minecraft so I died 7 times from falling off and getting hit by zombies. 
+    </div>
+  </div>
+
+</body>
+</html>

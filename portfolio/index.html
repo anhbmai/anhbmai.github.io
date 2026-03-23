@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anh Mai's Portfolio</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #e8b8c2, #efe9c9);
+  text-align: center;
+}
+
+/* HEADER */
+.header {
+  background: #f5f5f5;
+  padding: 40px 20px 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 48px;
+  letter-spacing: 4px;
+}
+
+/* NAV */
+.nav {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  align-items: center;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.dropbtn {
+  text-decoration: none;
+  color: #444;
+  font-size: 18px;
+  letter-spacing: 2px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* OTHER ART LINK */
+.other-art {
+  color: #b5b5b5;
+  text-decoration: none;
+}
+
+.other-art:hover {
+  color: #888;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+/* ITEMS */
+.item {
+  text-align: center;
+}
+
+.item a {
+  text-decoration: none;
+  color: black;
+}
+
+.item img {
+  width: 100%;
+  max-width: 340px;
+}
+
+/* TITLES */
+.title {
+  margin-top: 15px;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* MIDDLE COLUMN */
+.middle-column {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>ANH MAI'S PORTFOLIO</h1>
+
+  <div class="nav">
+
+    <!-- ART 74 DROPDOWN -->
+    <div class="dropdown">
+      <a href="index.html" class="dropbtn">ART 74</a>
+
+      <div class="dropdown-content">
+        <a href="glitch.html">Glitch Art</a>
+        <a href="meme.html">Meme Mashup</a>
+        <a href="netart.html">Net Art</a>
+        <a href="minecraft.html">Minecraft Art</a>
+      </div>
+    </div>
+
+    <!-- OTHER ART LINK -->
+    <a href="otherart.html" class="other-art">OTHER ART</a>
+
+  </div>
+</div>
+
+<div class="gallery">
+
+  <!-- LEFT -->
+  <div class="item">
+    <a href="glitch.html">
+      <img src="glitch.JPG">
+      <div class="title">GLITCH ART</div>
+    </a>
+  </div>
+
+  <!-- MIDDLE -->
+  <div class="middle-column">
+
+    <div class="item">
+      <a href="meme.html">
+        <img src="mememashup.jpg">
+        <div class="title">MEME MASHUP</div>
+      </a>
+    </div>
+
+    <div class="item">
+      <a href="netart.html">
+        <img src="netart1.jpg">
+        <div class="title">NET ART</div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="item">
+    <a href="minecraft.html">
+      <img src="totoro.JPG">
+      <div class="title">MINECRAFT ART</div>
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>

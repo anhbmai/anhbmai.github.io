@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Other Art</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #e8b8c2, #efe9c9);
+  color: #222;
+  text-align: center;
+}
+
+/* HEADER */
+.header {
+  background: #f5f5f5;
+  padding: 40px 20px 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 48px;
+  letter-spacing: 4px;
+}
+
+/* NAV */
+.nav {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  align-items: center;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.dropbtn {
+  text-decoration: none;
+  color: #444;
+  padding: 10px;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* OTHER ART LINK */
+.other-art {
+  color: #888;
+  text-decoration: none;
+}
+
+.other-art:hover {
+  color: #555;
+}
+
+/* CONTENT */
+.content {
+  max-width: 900px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+}
+
+/* SINGLE IMAGE */
+.single-image img {
+  width: 100%;
+  max-width: 700px;
+}
+
+/* TWO IMAGE ROW */
+.row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.row img {
+  width: 100%;
+  max-width: 340px;
+}
+
+/* TEXT */
+.text {
+  font-size: 20px;
+  margin: 15px 0 35px;
+  line-height: 1.6;
+}
+
+/* NARROW IMAGE */
+.narrow img {
+  max-width: 450px;
+}
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>ANH MAI'S PORTFOLIO</h1>
+
+  <div class="nav">
+    <div class="dropdown">
+      <a href="index.html" class="dropbtn">ART 74</a>
+      <div class="dropdown-content">
+        <a href="meme.html">MEME MASHUP</a>
+        <a href="minecraft.html">MINECRAFT ART</a>
+        <a href="glitch.html">GLITCH ART</a>
+        <a href="netart.html">NET ART</a>
+      </div>
+    </div>
+
+    <a href="otherart.html" class="other-art">OTHER ART</a>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- FIRST IMAGE -->
+  <div class="single-image">
+    <img src="artwork.png">
+  </div>
+
+  <div class="text">
+  (Left) Original Character, 2024, Procreate; (Right) Zine assignment for Art-12, 2025, Procreate
+  </div>
+
+  <!-- SECOND ROW (FIXED) -->
+  <div class="row">
+    <img src="IMG_3517.JPG">
+    <img src="IMG_3516.JPG">
+  </div>
+
+  <div class="text">
+    Posters for my high school baking club, 2024, Procreate
+  </div>
+
+  <!-- NEXT -->
+  <div class="single-image">
+    <img src="IMG_3518.JPG">
+
+   </div>
+
+ 
+
+  <div class="text">
+    A poster for a charity organization, 2024, Procreate
+  </div>
+
+ 
+  <!-- LAST -->
+  <div class="single-image narrow">
+    <img src="1758056655.977658.jpg">
+  </div>
+
+ 
+
+  <div class="text">
+    Assignment for Art-12, 2025
+  </div>
+
+  <div class="text">
+    An archive of personal explorations and works shaped through past art classes.
+  </div>
+
+</div>
+
+</body>
+</html>

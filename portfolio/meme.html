@@ -1,181 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meme Mashup</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #e8b8c2, #efe9c9);
-      color: #222;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Mashup | Anh Mai</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to right, #e8b8c2, #efe9c9);
+            min-height: 100vh;
+            color: #444;
+        }
 
-    .header {
-      background: #f5f5f5;
-      padding: 40px 20px 20px;
-    }
+        /* STICKY NAVBAR (Consistent across all pages) */
+        .navbar-custom {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(8px);
+        }
 
-    .header h1 {
-      margin: 0;
-      font-size: 48px;
-      letter-spacing: 4px;
-    }
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: #000;
+            display: block;
+            margin-bottom: 10px;
+            text-align: center;
+        }
 
-    .nav {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      align-items: center;
-      font-size: 18px;
-      letter-spacing: 2px;
-    }
+        .nav-links-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-      padding-bottom: 8px;
-    }
+        .nav-links-container a {
+            text-decoration: none;
+            color: #666;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
 
-    .dropbtn {
-      text-decoration: none;
-      color: #444;
-      font-size: 18px;
-      letter-spacing: 2px;
-      padding: 10px;
-      display: inline-block;
-    }
+        .nav-links-container a:hover, .nav-links-container a.active {
+            color: #ff6f91; 
+        }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: white;
-      min-width: 220px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-      z-index: 999;
-    }
+        /* CONTENT AREA */
+        .content-section {
+            padding-top: 180px; 
+            padding-bottom: 80px;
+        }
 
-    .dropdown-content a {
-      color: #333;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      text-align: left;
-      letter-spacing: 1px;
-    }
+        .art-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 2px solid white;
+            text-align: center;
+        }
 
-    .dropdown-content a:hover {
-      background-color: #f2f2f2;
-    }
+        .page-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #333;
+            letter-spacing: 2px;
+        }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+        .art-image {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
 
-    .other-art {
-      color: #b5b5b5;
-      text-decoration: none;
-    }
+        .description-text {
+            font-size: 17px;
+            line-height: 1.8;
+            text-align: left;
+            padding: 0 20px;
+        }
 
-    .other-art:hover {
-      color: #888;
-    }
+        .highlight {
+            color: #ff6f91;
+            font-weight: 700;
+        }
 
-    .content {
-      max-width: 950px;
-      margin: 50px auto 70px;
-      padding: 0 24px;
-    }
-
-    .page-title {
-      font-family: Georgia, serif;
-      font-size: 42px;
-      margin-bottom: 30px;
-      letter-spacing: 1px;
-    }
-
-    .art-image {
-      width: 100%;
-      max-width: 700px;
-      height: auto;
-      display: block;
-      margin: 0 auto 35px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-    }
-
-    .description {
-      max-width: 820px;
-      margin: 0 auto;
-      text-align: left;
-      font-size: 20px;
-      line-height: 1.8;
-    }
-
-    .description p {
-      margin: 0 0 24px;
-    }
-
-    @media (max-width: 900px) {
-      .header h1 {
-        font-size: 34px;
-      }
-
-      .nav {
-        gap: 24px;
-        flex-wrap: wrap;
-      }
-
-      .page-title {
-        font-size: 32px;
-      }
-
-      .description {
-        font-size: 18px;
-      }
-    }
-  </style>
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .content-section { padding-top: 140px; }
+            .art-container { padding: 25px; margin: 0 15px; }
+            .page-title { font-size: 24px; }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="header">
-    <h1>ANH MAI'S PORTFOLIO</h1>
-
-    <div class="nav">
-      <div class="dropdown">
-        <a href="index.html" class="dropbtn">ART 74</a>
-        <div class="dropdown-content">
-          <a href="glitch.html">Glitch Art</a>
-          <a href="meme.html">Meme Mashup</a>
-          <a href="netart.html">Net Art</a>
-          <a href="minecraft.html">Minecraft Art</a>
+    <div class="navbar-custom">
+        <div class="container">
+            <a href="index.html" class="brand-name">ANH MAI</a>
+            <div class="nav-links-container">
+                <a href="index.html">HOME</a>
+                <a href="glitch.html">GLITCH</a>
+                <a href="meme.html" class="active">MASHUP</a>
+                <a href="netart.html">NET ART</a>
+                <a href="minecraft.html">MINECRAFT</a>
+                <a href="otherart.html">OTHER ART</a>
+            </div>
         </div>
-      </div>
-
-      <a href="otherart.html" class="other-art">OTHER ART</a>
     </div>
-  </div>
 
-  <div class="content">
-    <div class="page-title">MEME MASHUP</div>
+    <div class="container content-section">
+        <div class="art-container">
+            <h1 class="page-title">MEME MASHUP</h1>
 
-    <img src="mememashup.jpg" alt="Meme Mashup" class="art-image">
+            <img src="mememashup.jpg" alt="Meme Mashup" class="art-image">
 
-    <div class="description">
-      <p>
-        For this assignment I decided to mash up a fresh meme from an anime series called “Danganronpa” with a Chiikawa sticker. The context of the meme is a character from the series – Kirigiri – was found guilty of murdering her classmate in a Battel Royale-ish game and is being punished because of it. Her punishment is being crushed to death and in the meme she is holding her breath until her face turns purple waiting for the gigantic thing behind to crush her.
-      </p>
+            <div class="description-text">
+                <p>For this assignment I decided to mash up a fresh meme from an anime series called <span class="highlight">“Danganronpa”</span> with a <span class="highlight">Chiikawa sticker</span>.</p> 
+                
+                <p>The context of the meme is a character from the series – Kirigiri – was found guilty of murdering her classmate in a Battle Royale-ish game and is being punished because of it. Her punishment is being crushed to death and in the meme she is holding her breath until her face turns purple waiting for the gigantic thing behind to crush her.</p>
 
-      <p>
-        I incorporated a scared Chiikawa sticker because I love Chiikawa and it fits the context of the meme. Usually people use the meme for situations of waiting anxiously while knowing exactly something bad is about to happen to them.
-      </p>
+                <p>I incorporated a scared <span class="highlight">Chiikawa</span> sticker because I love Chiikawa and it fits the context of the meme. Usually people use the meme for situations of waiting anxiously while knowing exactly something bad is about to happen to them.</p>
+            </div>
+        </div>
     </div>
-  </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

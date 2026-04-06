@@ -1,210 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Other Art</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Art | Anh Mai</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to right, #e8b8c2, #efe9c9);
+            min-height: 100vh;
+            color: #444;
+        }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #e8b8c2, #efe9c9);
-  color: #222;
-  text-align: center;
-}
+        /* STICKY NAVBAR */
+        .navbar-custom {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(8px);
+        }
 
-/* HEADER */
-.header {
-  background: #f5f5f5;
-  padding: 40px 20px 20px;
-}
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: #000;
+            display: block;
+            margin-bottom: 10px;
+            text-align: center;
+        }
 
-.header h1 {
-  margin: 0;
-  font-size: 48px;
-  letter-spacing: 4px;
-}
+        .nav-links-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
 
-/* NAV */
-.nav {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  align-items: center;
-  font-size: 18px;
-  letter-spacing: 2px;
-}
+        .nav-links-container a {
+            text-decoration: none;
+            color: #666;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
 
-/* DROPDOWN */
-.dropdown {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 8px;
-}
+        .nav-links-container a:hover, .nav-links-container a.active {
+            color: #ff6f91; 
+        }
 
-.dropbtn {
-  text-decoration: none;
-  color: #444;
-  padding: 10px;
-  display: inline-block;
-}
+        /* CONTENT AREA */
+        .content-section {
+            padding-top: 180px; 
+            padding-bottom: 80px;
+        }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  min-width: 220px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  z-index: 999;
-}
+        .art-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 2px solid white;
+            text-align: center;
+        }
 
-.dropdown-content a {
-  display: block;
-  padding: 12px 16px;
-  color: #333;
-  text-decoration: none;
-}
+        .page-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #333;
+            letter-spacing: 2px;
+        }
 
-.dropdown-content a:hover {
-  background: #f2f2f2;
-}
+        /* Gallery Item Styling */
+        .gallery-item {
+            margin-bottom: 50px;
+        }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+        .art-img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
 
-/* OTHER ART LINK */
-.other-art {
-  color: #888;
-  text-decoration: none;
-}
+        .art-img:hover {
+            transform: scale(1.02);
+        }
 
-.other-art:hover {
-  color: #555;
-}
+        .caption {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #555;
+            font-style: italic;
+        }
 
-/* CONTENT */
-.content {
-  max-width: 900px;
-  margin: 40px auto 80px;
-  padding: 0 20px;
-}
+        .highlight {
+            color: #ff6f91;
+            font-weight: 700;
+        }
 
-/* SINGLE IMAGE */
-.single-image img {
-  width: 100%;
-  max-width: 700px;
-}
+        .narrow-img {
+            max-width: 450px;
+            margin: 0 auto;
+        }
 
-/* TWO IMAGE ROW */
-.row {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 10px;
-}
+        /* Footer Intro */
+        .footer-text {
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 30px;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 600;
+        }
 
-.row img {
-  width: 100%;
-  max-width: 340px;
-}
-
-/* TEXT */
-.text {
-  font-size: 20px;
-  margin: 15px 0 35px;
-  line-height: 1.6;
-}
-
-/* NARROW IMAGE */
-.narrow img {
-  max-width: 450px;
-}
-
-@media (max-width: 800px) {
-  .row {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-</style>
+        @media (max-width: 768px) {
+            .content-section { padding-top: 140px; }
+            .art-container { padding: 25px; margin: 0 15px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="header">
-  <h1>ANH MAI'S PORTFOLIO</h1>
-
-  <div class="nav">
-    <div class="dropdown">
-      <a href="index.html" class="dropbtn">ART 74</a>
-      <div class="dropdown-content">
-        <a href="meme.html">MEME MASHUP</a>
-        <a href="minecraft.html">MINECRAFT ART</a>
-        <a href="glitch.html">GLITCH ART</a>
-        <a href="netart.html">NET ART</a>
-      </div>
+    <div class="navbar-custom">
+        <div class="container">
+            <a href="index.html" class="brand-name">ANH MAI</a>
+            <div class="nav-links-container">
+                <a href="index.html">HOME</a>
+                <a href="glitch.html">GLITCH</a>
+                <a href="meme.html">MASHUP</a>
+                <a href="netart.html">NET ART</a>
+                <a href="minecraft.html">MINECRAFT</a>
+                <a href="otherart.html" class="active">OTHER ART</a>
+            </div>
+        </div>
     </div>
 
-    <a href="otherart.html" class="other-art">OTHER ART</a>
-  </div>
-</div>
+    <div class="container content-section">
+        <div class="art-container">
+            <h1 class="page-title">OTHER ART</h1>
 
-<div class="content">
+            <div class="gallery-item">
+                <img src="artwork.png" alt="Procreate Art" class="art-img">
+                <p class="caption">(Left) Original Character, 2024, <span class="highlight">Procreate</span>; (Right) Zine assignment for Art-12, 2025, <span class="highlight">Procreate</span></p>
+            </div>
 
-  <!-- FIRST IMAGE -->
-  <div class="single-image">
-    <img src="artwork.png">
-  </div>
+            <div class="gallery-item">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6">
+                        <img src="IMG_3517.JPG" alt="Baking Club Poster 1" class="art-img">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="IMG_3516.JPG" alt="Baking Club Poster 2" class="art-img">
+                    </div>
+                </div>
+                <p class="caption">Posters for my high school <span class="highlight">baking club</span>, 2024, Procreate</p>
+            </div>
 
-  <div class="text">
-  (Left) Original Character, 2024, Procreate; (Right) Zine assignment for Art-12, 2025, Procreate
-  </div>
+            <div class="gallery-item">
+                <img src="IMG_3518.JPG" alt="Charity Poster" class="art-img">
+                <p class="caption">A poster for a <span class="highlight">charity organization</span>, 2024, Procreate</p>
+            </div>
 
-  <!-- SECOND ROW (FIXED) -->
-  <div class="row">
-    <img src="IMG_3517.JPG">
-    <img src="IMG_3516.JPG">
-  </div>
+            <div class="gallery-item">
+                <div class="narrow-img">
+                    <img src="1758056655.977658.jpg" alt="Art-12 Assignment" class="art-img">
+                </div>
+                <p class="caption">Assignment for Art-12, 2025</p>
+            </div>
 
-  <div class="text">
-    Posters for my high school baking club, 2024, Procreate
-  </div>
+            <div class="footer-text">
+                An archive of personal explorations and works shaped through past art classes. ✨
+            </div>
+        </div>
+    </div>
 
-  <!-- NEXT -->
-  <div class="single-image">
-    <img src="IMG_3518.JPG">
-
-   </div>
-
- 
-
-  <div class="text">
-    A poster for a charity organization, 2024, Procreate
-  </div>
-
- 
-  <!-- LAST -->
-  <div class="single-image narrow">
-    <img src="1758056655.977658.jpg">
-  </div>
-
- 
-
-  <div class="text">
-    Assignment for Art-12, 2025
-  </div>
-
-  <div class="text">
-    An archive of personal explorations and works shaped through past art classes.
-  </div>
-
-</div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

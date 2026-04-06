@@ -1,188 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Net Art</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net Art | Anh Mai</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to right, #e8b8c2, #efe9c9);
+            min-height: 100vh;
+            color: #444;
+        }
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: black;
-      color: white;
-      text-align: center;
-    }
+        /* STICKY NAVBAR */
+        .navbar-custom {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(8px);
+        }
 
-    .header {
-      background: #111;
-      padding: 40px 20px 20px;
-    }
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: #000;
+            display: block;
+            margin-bottom: 10px;
+            text-align: center;
+        }
 
-    .header h1 {
-      margin: 0;
-      font-size: 48px;
-      letter-spacing: 4px;
-      color: white;
-    }
+        .nav-links-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
 
-    .nav {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      align-items: center;
-      font-size: 18px;
-      letter-spacing: 2px;
-    }
+        .nav-links-container a {
+            text-decoration: none;
+            color: #666;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
-      padding-bottom: 8px;
-    }
+        .nav-links-container a:hover, .nav-links-container a.active {
+            color: #ff6f91; 
+        }
 
-    .dropbtn {
-      text-decoration: none;
-      color: #ccc;
-      font-size: 18px;
-      letter-spacing: 2px;
-      padding: 10px;
-      display: inline-block;
-    }
+        /* CONTENT AREA */
+        .content-section {
+            padding-top: 180px; 
+            padding-bottom: 80px;
+        }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: white;
-      min-width: 220px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-      z-index: 999;
-    }
+        .art-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 2px solid white;
+            text-align: center;
+        }
 
-    .dropdown-content a {
-      color: #333;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      text-align: left;
-    }
+        .page-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #333;
+            letter-spacing: 2px;
+        }
 
-    .dropdown-content a:hover {
-      background-color: #f2f2f2;
-    }
+        /* Stacked Images Styling */
+        .img-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+        .art-image {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
 
-    .other-art {
-      color: #777;
-      text-decoration: none;
-    }
+        .art-image:hover {
+            transform: scale(1.02);
+        }
 
-    .other-art:hover {
-      color: white;
-    }
+        /* Net Art Link Button */
+        .btn-net-art {
+            background-color: #ff6f91;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 40px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255, 111, 145, 0.3);
+        }
 
-    .content {
-      max-width: 950px;
-      margin: 50px auto 70px;
-      padding: 0 24px;
-    }
+        .btn-net-art:hover {
+            background-color: #ff4a75;
+            color: white;
+            transform: translateY(-2px);
+        }
 
-    .page-title {
-      font-family: Georgia, serif;
-      font-size: 42px;
-      margin-bottom: 40px;
-      letter-spacing: 1px;
-    }
+        .description-text {
+            font-size: 17px;
+            line-height: 1.8;
+            text-align: left;
+            padding: 0 20px;
+        }
 
-    .art-image {
-      width: 100%;
-      max-width: 700px;
-      display: block;
-      margin: 0 auto 40px;
-      box-shadow: 0 10px 30px rgba(255,255,255,0.1);
-    }
+        .highlight {
+            color: #ff6f91;
+            font-weight: 700;
+        }
 
-    .github-link {
-      margin: 30px 0 10px;
-    }
-
-    .github-link a {
-      color: #66ccff;
-      text-decoration: none;
-      font-size: 18px;
-      letter-spacing: 1px;
-    }
-
-    .github-link a:hover {
-      text-decoration: underline;
-    }
-
-    .description {
-      max-width: 820px;
-      margin: 40px auto;
-      text-align: left;
-      font-size: 20px;
-      line-height: 1.8;
-      color: #ccc;
-    }
-
-    .description p {
-      margin-bottom: 24px;
-    }
-  </style>
+        @media (max-width: 768px) {
+            .content-section { padding-top: 140px; }
+            .art-container { padding: 25px; margin: 0 15px; }
+        }
+    </style>
 </head>
-
 <body>
 
-  <div class="header">
-    <h1>ANH MAI'S PORTFOLIO</h1>
-
-    <div class="nav">
-      <div class="dropdown">
-        <a href="index.html" class="dropbtn">ART 74</a>
-        <div class="dropdown-content">
-          <a href="glitch.html">Glitch Art</a>
-          <a href="meme.html">Meme Mashup</a>
-          <a href="netart.html">Net Art</a>
-          <a href="minecraft.html">Minecraft Art</a>
+    <div class="navbar-custom">
+        <div class="container">
+            <a href="index.html" class="brand-name">ANH MAI</a>
+            <div class="nav-links-container">
+                <a href="index.html">HOME</a>
+                <a href="glitch.html">GLITCH</a>
+                <a href="meme.html">MASHUP</a>
+                <a href="netart.html" class="active">NET ART</a>
+                <a href="minecraft.html">MINECRAFT</a>
+                <a href="otherart.html">OTHER ART</a>
+            </div>
         </div>
-      </div>
-
-      <a href="otherart.html" class="other-art">OTHER ART</a>
-    </div>
-  </div>
-
-  <div class="content">
-    <div class="page-title">NET ART</div>
-
-    <img src="netart1.jpg" class="art-image">
-    <img src="netart2.png" class="art-image">
-    <img src="netart3.png" class="art-image">
-    <img src="netart4.png" class="art-image">
-    <img src="netart5.png" class="art-image">
-    <img src="netart6.png" class="art-image">
-
-    <!-- GITHUB LINK -->
-    <div class="github-link">
-      <a href="https://anhbmai.github.io/index.html" target="_blank">
-        View Net Art Project →
-      </a>
     </div>
 
-    <div class="description">
-      <p>
-        This is a murder mystery with the murder scene, police report, hints for you to solve. This is actually an assignment I had to do for my Detective Fiction class in 45 minutes in order to gain some extra credits. If you have the patience to read through every single option carefully, it is actually really easy to solve! ​
-      </p>
+    <div class="container content-section">
+        <div class="art-container">
+            <h1 class="page-title">NET ART</h1>
 
-      
-  </div>
+            <div class="img-stack">
+                <img src="netart1.jpg" alt="Net Art 1" class="art-image">
+                <img src="netart2.png" alt="Net Art 2" class="art-image">
+                <img src="netart3.png" alt="Net Art 3" class="art-image">
+                <img src="netart4.png" alt="Net Art 4" class="art-image">
+                <img src="netart6.png" alt="Net Art 6" class="art-image">
+            </div>
 
+            <a href="https://anhbmai.github.io/index.html" target="_blank" class="btn-net-art">
+                Solve the Murder Mystery →
+            </a>
+
+            <div class="description-text">
+                <p>This is a <span class="highlight">murder mystery</span> featuring the murder scene, a police report, and hidden hints for you to solve the case. This was originally an assignment for my Detective Fiction class that I had to complete in just 45 minutes!</p>
+                
+                <p>It’s a fun exercise in narrative and investigation. If you have the patience to read through every single option carefully, it is actually quite easy to solve! ✨</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

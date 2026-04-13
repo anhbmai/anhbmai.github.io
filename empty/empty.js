@@ -23,7 +23,7 @@ function draw() {
 // shirt base
 noStroke();
 fill('white');
-stroke(2);
+stroke(8);
 circle(300, 623, 400); 
 
 // start the mask
@@ -45,7 +45,7 @@ push();
     }
   }
 pop();
-  stroke(3);
+  stroke(1);
   fill('white');
   triangle(300,572,252,430,210,450);
   triangle(300,572,348,430,390,450);
@@ -106,7 +106,7 @@ pop();
   push();           
   translate(390,132); 
   rotate(21);       
-  ellipse(0, 0,60,200); 
+  ellipse(0, 0,60,203); 
   pop();    
  
 }

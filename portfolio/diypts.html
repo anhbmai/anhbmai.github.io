@@ -19,14 +19,14 @@
 
         /* STICKY NAVBAR */
         .navbar-custom {
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px 0;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.3);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(8px);
         }
 
         .brand-name {
@@ -34,25 +34,31 @@
             font-weight: 700;
             letter-spacing: 4px;
             text-decoration: none;
-            color: #2c3e50;
+            color: #000;
             display: block;
-            text-align: center;
             margin-bottom: 10px;
+            text-align: center;
         }
 
         .nav-links-container {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
         .nav-links-container a {
             text-decoration: none;
-            color: #5d6d7e;
-            font-size: 12px;
+            color: #666;
+            font-size: 13px;
             font-weight: 600;
             letter-spacing: 1.5px;
             text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links-container a:hover, .nav-links-container a.active {
+            color: #ff6f91; 
         }
 
         /* CONTENT STYLING */
@@ -66,7 +72,7 @@
             border-radius: 30px;
             padding: 40px;
             border: 2px solid rgba(255, 255, 255, 0.7);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            boxshadow: 0 15px 35px rgba(0,0,0,0.05);
         }
 
         h1 {

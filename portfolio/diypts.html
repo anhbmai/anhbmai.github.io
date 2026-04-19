@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whimsical Collage | Anh Mai</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #d6eaf8, #ebf5fb, #d4e6f1);
+            min-height: 100vh;
+            color: #444;
+        }
+
+        /* STICKY NAVBAR */
+        .navbar-custom {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: #2c3e50;
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .nav-links-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .nav-links-container a {
+            text-decoration: none;
+            color: #5d6d7e;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* CONTENT STYLING */
+        .main-container {
+            padding-top: 160px;
+            padding-bottom: 60px;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 30px;
+            padding: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        /* GRID FOR IFRAME & IMAGE */
+        .creative-row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .iframe-box {
+            width: 606px;
+            height: 606px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .example-box {
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .example-img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+
+        /* CODE BLOCK */
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: left;
+            font-size: 14px;
+            max-height: 500px;
+            overflow-y: auto;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+
+        .instructions-list {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .instructions-list li {
+            padding: 5px 0;
+            font-weight: 600;
+        }
+
+        .key-num {
+            color: #3498db;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar-custom">
+        <div class="container">
+            <a href="home.html" class="brand-name">ANH MAI</a>
+            <div class="nav-links-container">
+                <a href="home.html">HOME</a>
+                <a href="glitch.html">GLITCH</a>
+                <a href="meme.html">MASHUP</a>
+                <a href="netart.html">NET ART</a>
+                <a href="minecraft.html">MINECRAFT</a>
+ 		<a href="diypts.html">DIY PTS</a>
+                <a href="otherart.html">OTHER ART</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-container">
+        <div class="glass-panel text-center">
+            <h1>Make your own whimsical collage! ✨</h1>
+            
+            <p class="mb-4">Use your keyboard and mouse to paint a magical scene below. Each number key unlocks a new element!</p>
+
+            <div class="creative-row">
+                <div class="iframe-box">
+                    <iframe src="diyps2026/index.html" width="606" height="606" frameborder="0"></iframe>
+                </div>
+
+                <div class="example-box">
+                    <img src="example.jpg" alt="Example Collage" class="example-img">
+                    <p class="text-muted small italic">This is an example of what you can make!</p>
+                    
+                    <div class="mt-4 p-3 bg-white rounded shadow-sm">
+                        <h5>Controls:</h5>
+                        <ul class="instructions-list">
+                            <li><span class="key-num">1:</span> Draw stars</li>
+                            <li><span class="key-num">2:</span> Draw castle</li>
+                            <li><span class="key-num">3:</span> Draw clouds</li>
+                            <li><span class="key-num">4:</span> Draw fairy</li>
+                            <li><span class="key-num">5:</span> Draw moon</li>
+                            <li><span class="key-num">6:</span> Draw sun</li>
+                            <li><span class="key-num">7:</span> Draw ornament</li>
+                            <li><span class="key-num">8:</span> Draw waves</li>
+                            <li><span class="key-num">9:</span> Draw a bunny</li>
+                            <li><span class="key-num">0:</span> Draw another bunny</li>
+                            <hr>
+                            <li><span class="key-num">X:</span> Clear Canvas</li>
+                            <li><span class="key-num">P:</span> Save Artwork</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <h3>The Code Behind the Magic</h3>
+<pre>
+var img;
+var bg;
+var initials = 'am'; // your initials
+var choice = '1'; // starting choice, so it is not empty
+var lastscreenshot=61; // last screenshot never taken
+
+function preload() {
+  bg = loadImage('bg.png');
+  castle = loadImage('castle.png');
+  clouds = loadImage('clouds.png');
+  fairy = loadImage('fairy.png');
+  moon = loadImage('moon.png');
+  star = loadImage('star.png');
+  sun = loadImage('sun.png');
+  ornament = loadImage('treo.png');
+  waves = loadImage('waves.png');
+  bunny1 = loadImage('bunny1.png');
+  bunny2 = loadImage('bunny2.png');
+}
+
+function setup() {
+  createCanvas(600, 600);
+  image(bg, 0, 0, 600, 600);
+}
+
+function draw() {
+  if (keyIsPressed) {
+    choice = key;
+    clear_print();
+  }
+  if (mouseIsPressed){
+    newkeyChoice(choice);
+  }
+}
+
+function newkeyChoice(toolChoice) {
+  if (toolChoice == '1' ) {
+    let spread = 70;
+    image(star, mouseX + random(-spread, spread), mouseY + random(-spread, spread), 30, 30);
+  } else if (toolChoice == '2') {
+    image(castle, mouseX - 100, mouseY - 100, 300, 300);
+  } else if (toolChoice == '3') {
+    image(clouds, mouseX - 100, mouseY - 100, 200, 130);
+  } else if (toolChoice == '4') {
+    image(fairy, mouseX - 50, mouseY - 50, 100, 130);
+  } else if (toolChoice == '5') {
+    image(moon, mouseX - 50, mouseY - 50, 130, 130);
+  } else if (toolChoice == '6') {
+    image(sun, mouseX - 50, mouseY - 50, 130, 130);
+  } else if (toolChoice == '7') {
+    image(ornament, mouseX - 15, mouseY - 100, 40, 200);
+  } else if (toolChoice == '8') {
+    image(waves, mouseX - 140, mouseY - 100 , 230, 150);
+  } else if (toolChoice == '9') {
+    image(bunny1, mouseX - 30, mouseY - 30, 70, 70);
+  } else if (toolChoice == '0') {
+    image(bunny2, mouseX - 30, mouseY - 30, 70, 70);
+  }
+}
+
+function clear_print() {
+  if (key == 'x' || key == 'X') {
+    image(bg, 0, 0, 600, 600);
+  } else if (key == 'p' || key == 'P') {
+     saveme();
+  }
+}
+
+function saveme(){
+  filename=initials+day() + hour() + minute() +second();
+  if (second()!=lastscreenshot) {
+    saveCanvas(filename, 'jpg');
+    key="";
+  }
+  lastscreenshot=second();
+}
+</pre>
+        </div>
+    </div>
+
+</body>
+</html>

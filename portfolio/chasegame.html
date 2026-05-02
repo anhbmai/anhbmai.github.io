@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Treat Chase | Anh Mai</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            /* Updated to Pastel Green Gradient */
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9, #c8e6c9);
+            min-height: 100vh;
+            color: #444;
+        }
+
+        /* STICKY NAVBAR */
+        .navbar-custom {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(8px);
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: #000;
+            display: block;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .nav-links-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links-container a {
+            text-decoration: none;
+            color: #666;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links-container a:hover, .nav-links-container a.active {
+            color: #2e7d32; /* Green hover color to match theme */
+        }
+
+        /* CONTENT STYLING */
+        .main-container {
+            padding-top: 160px;
+            padding-bottom: 60px;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 30px;
+            padding: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* CENTERED IFRAME */
+        .creative-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .iframe-box {
+            width: 606px;
+            height: 606px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* CODE BLOCK */
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: left;
+            font-size: 14px;
+            max-height: 500px;
+            overflow-y: auto;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar-custom">
+        <div class="container">
+            <a href="home.html" class="brand-name">ANH MAI</a>
+            <div class="nav-links-container">
+                <a href="home.html">HOME</a>
+                <a href="glitch.html">GLITCH</a>
+                <a href="meme.html">MASHUP</a>
+                <a href="netart.html">NET ART</a>
+                <a href="minecraft.html">MINECRAFT</a>
+                <a href="diypts.html">DIY PTS</a>
+                <a href="chasegame.html" class="active">CHASE GAME</a>
+                <a href="otherart.html">OTHER ART</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-container">
+        <div class="glass-panel text-center">
+            <h1>Find all the sweet treats while the homeowners are away! 🍰</h1>
+            <p class="mb-5">Use your mouse to chase down the desserts and increase your score!</p>
+
+            <div class="creative-row">
+                <div class="iframe-box">
+                    <iframe src="chase_game/index.html" width="606" height="606" frameborder="0"></iframe>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <h3>The Code Behind the Magic</h3>
+<pre>
+var ballx = 300;
+var bally = 300;
+var ballSize = 40;
+var score = 0;
+var gameState = "intro";
+var img, img2, cursorImg; // Added cursorImg here
+
+function preload() {
+  img4 = loadImage('https://anhbmai.github.io/cinnamon.png');
+  img3 = loadImage('https://anhbmai.github.io/shortcake.png');
+  img2 = loadImage('https://anhbmai.github.io/flan.png');
+  img = loadImage('https://anhbmai.github.io/house.jpg');
+  cursorImg = loadImage('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjJkZnJzcXExMWprMzN1MXNkbm9nMTR0Mzhhc3FwNDd1a2N4eWZiYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/WNlsQiGMU387hn7UZQ/giphy.gif');
+}
+
+function setup() {
+  createCanvas(600, 600);
+  textAlign(CENTER);
+  textFont('Courier New');
+  textSize(12);
+
+  noCursor(); // This hides the default white arrow
+}
+
+function draw() {
+  background(img);
+  fill(176,0,103);            
+  stroke('white');    
+  strokeWeight(2);    
+  textStyle(BOLD);     
+  textSize(20);
+  if (gameState == "intro") {
+    levelIntro();
+  }
+  if (gameState == "L1") {
+    levelOne();
+  }
+  if (gameState == "L2") {
+    levelTwo();
+  }
+  if (gameState == "L3") {
+    levelThree();
+  }
+  if (gameState == "win") {
+    levelWin();
+  }
+
+  if (gameState != "intro") {
+    fill(176,0,103);
+    text(("Score: " + score), width / 2, 40);
+  }
+
+  // DRAW THE CUSTOM CURSOR LAST
+  image(cursorImg, mouseX - 25, mouseY - 25, 50, 50);
+}
+
+function levelIntro() {
+ let textJiggle = sin(frameCount * 0.1) * 10;
+  text("Steal the food before the homeowner notices!", width / 2, 340 + textJiggle);
+  text("Press a key to play", width / 2, 390+ textJiggle);
+  if (keyIsPressed === true) {
+    gameState = "L1";
+  }
+}
+
+function levelOne() {
+  text("Level 1", width / 2, height - 20);
+  var distToBall = dist(ballx, bally, mouseX, mouseY);
+  if (distToBall < ballSize / 2) {
+    ballx = random(width);
+    bally = random(height);
+    score = score + 1;
+  }
+  if (score > 5) {
+    gameState = "L2";
+  }
+  image(img2, ballx - ballSize / 2, bally - ballSize / 2, ballSize, ballSize);
+  stroke(255);
+  line(ballx, bally, mouseX, mouseY);
+}
+
+function levelTwo() {
+  text("Level 2", width / 2, height - 20);
+  var distToBall = dist(ballx, bally, mouseX, mouseY);
+  if (distToBall < ballSize / 2) {
+    ballx = random(width);
+    bally = random(height);
+    score = score + 1;
+  }
+  if (score > 10) {
+    gameState = "L3";
+  }
+  image(img3, ballx - ballSize / 2, bally - ballSize / 2, ballSize, ballSize);
+}
+
+function levelThree() {
+  text("Level 3", width / 2, height - 20);
+  var distToBall = dist(ballx, bally, mouseX, mouseY);
+  if (distToBall < ballSize / 2) {
+    ballx = random(width);
+    bally = random(height);
+    ballSize = ballSize - 1;
+    score = score + 1;
+  }
+  if (score > 20) {
+    gameState = "win";
+  }
+  image(img4, ballx - ballSize / 2, bally - ballSize / 2, ballSize, ballSize);
+}
+
+function levelWin() {
+  background(255, 190, 218);
+  fill(176,0,103);
+  text("Yay! You're finally full!", width / 2, height / 2);
+}
+</pre>
+        </div>
+    </div>
+
+</body>
+</html>

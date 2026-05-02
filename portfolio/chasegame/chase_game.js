@@ -6,7 +6,9 @@ var gameState = "intro";
 var img, img2, cursorImg; // Added cursorImg here
 
 function preload() {
-  img2 = loadImage('https://anhbmai.github.io/portfolio/bunny2.png');
+  img4 = loadImage('https://anhbmai.github.io/cinnamon.png');
+  img3 = loadImage('https://anhbmai.github.io/shortcake.png');
+  img2 = loadImage('https://anhbmai.github.io/flan.png');
   img = loadImage('https://anhbmai.github.io/house.jpg');
   cursorImg = loadImage('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjJkZnJzcXExMWprMzN1MXNkbm9nMTR0Mzhhc3FwNDd1a2N4eWZiYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/WNlsQiGMU387hn7UZQ/giphy.gif');
 }
@@ -90,7 +92,7 @@ function levelTwo() {
   if (score > 10) {
     gameState = "L3";
   }
-  image(img2, ballx - ballSize / 2, bally - ballSize / 2, ballSize, ballSize);
+  image(img3, ballx - ballSize / 2, bally - ballSize / 2, ballSize, ballSize);
 }
 
 function levelThree() {
@@ -105,11 +107,11 @@ function levelThree() {
   if (score > 20) {
     gameState = "win";
   }
-  image(img2, ballx - ballSize / 2, bally - ballSize / 2, ballSize, ballSize);
+  image(img4, ballx - ballSize / 2, bally - ballSize / 2, ballSize, ballSize);
 }
 
 function levelWin() {
-  background(20, 90, 20);
-  fill(255);
-  text("Look at you! You won!", width / 2, height / 2);
+  background(255, 190, 218);
+  fill(176,0,103);
+  text("Yay! You're finally full!", width / 2, height / 2);
 }

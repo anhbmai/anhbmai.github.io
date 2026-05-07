@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Arrival - Escape the Village</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #050505;
+        }
+
+        .game-scene {
+            background-image: linear-gradient(to top, rgba(0,0,0,0.9), transparent), url('escapebg2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Character Sprite Logic */
+        .sprite-container {
+            height: 60vh; /* Keeps Tim at a consistent height */
+            display: flex;
+            align-items: flex-end;
+            z-index: 1;
+        }
+
+        #character-sprite {
+            width: 400px;
+            max-width: 90vw;
+            transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
+            filter: drop-shadow(0 0 15px rgba(0,0,0,0.7));
+            /* Animation for when he first appears */
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Dialogue Box */
+        .dialogue-container {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(15, 10, 5, 0.95);
+            border: 1px solid #3d352a;
+            padding: 30px;
+            margin-bottom: 50px;
+            z-index: 2;
+            box-shadow: 0 -5px 40px rgba(0,0,0,0.8);
+            border-radius: 2px;
+        }
+
+        #speaker-name {
+            font-family: 'IM Fell English SC', serif;
+            color: #8c7d6b;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            border-left: 3px solid #5c1a1a;
+            padding-left: 10px;
+        }
+
+        #dialogue-text {
+            font-family: 'Crimson Text', serif;
+            color: #a39382;
+            font-size: 1.5rem;
+            line-height: 1.4;
+            min-height: 80px;
+        }
+
+        .hint {
+            margin-top: 15px;
+            text-align: right;
+            font-family: 'Crimson Text', serif;
+            font-size: 10;
+            color: #4a4136;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-scene">
+        <div class="sprite-container">
+            <img src="Tim.png" id="character-sprite" alt="Tim Johnson">
+        </div>
+
+        <div class="dialogue-container">
+            <div id="speaker-name">Tim</div>
+            <div id="dialogue-text">"…We’re finally here. That drive felt endless. This village is buried so deep in the woods there’s no signal… no GPS… nothing."</div>
+            <div class="hint">Press [ Enter ] to continue</div>
+        </div>
+    </div>
+
+    <script>
+        let step = 0;
+
+        // Function to advance dialogue
+        function nextStep() {
+            const speaker = document.getElementById('speaker-name');
+            const text = document.getElementById('dialogue-text');
+            const sprite = document.getElementById('character-sprite');
+
+            if (step === 0) {
+                // Protagonist speaks
+                speaker.innerText = "You";
+                text.innerText = "Look…Is that your cousin? The one you told me about? He looks exactly like the man in that old photograph with your grandfather. Come on… let’s go talk to them.";
+                
+                // Visual feedback: Tim recedes slightly as you speak
+                sprite.style.opacity = "0.6";
+                sprite.style.transform = "scale(0.9) translateY(10px)";
+                sprite.style.filter = "grayscale(40%) blur(1px)";
+                
+                step++;
+            } else {
+                // Move to next scene
+                window.location.href = "approach-cousin.html";
+            }
+        }
+
+        // KEYBOARD LISTENER
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Enter") {
+                nextStep();
+            }
+        });
+    </script>
+
+</body>
+</html>

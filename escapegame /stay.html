@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The City's Silence</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%; width: 100%;
+            overflow: hidden; background-color: #0a0a0c; color: #8e8e93;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .background {
+            background-image: 
+                linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+                url('city-rain.jpg'); /* Suggest using a rainy, cold city street */
+            background-size: cover; background-position: center;
+            height: 100vh; display: flex; justify-content: center; align-items: center;
+        }
+
+        .narrative-frame {
+            width: 80%; max-width: 600px; padding: 50px;
+            background: rgba(10, 10, 15, 0.95);
+            border: 1px solid #2c2c2e;
+            box-shadow: 0 0 40px rgba(0,0,0,0.8);
+            position: relative;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'IM Fell English SC', serif;
+            color: #d1d1d6; letter-spacing: 3px; font-weight: normal;
+            margin-bottom: 30px; border-bottom: 1px solid #2c2c2e;
+            padding-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2rem; line-height: 1.8; color: #a1a1aa;
+            margin-bottom: 25px; text-align: justify;
+        }
+
+        .highlight {
+            color: #5c1a1a; /* The same blood red from the intro */
+            font-weight: bold;
+        }
+
+        .options {
+            margin-top: 40px;
+        }
+
+        .choice {
+            font-family: 'IM Fell English SC', serif;
+            text-decoration: none; color: #48484a;
+            font-size: 1rem; letter-spacing: 2px;
+            transition: 0.8s ease;
+        }
+
+        .choice:hover {
+            color: #d1d1d6;
+            text-shadow: 0 0 10px rgba(255,255,255,0.2);
+        }
+
+        /* Ambient static effect to represent "modern comfort" feeling wrong */
+        .vignette {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, transparent 50%, black 150%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background">
+        <div class="vignette"></div>
+        <div class="narrative-frame">
+            <h1>Safe Behind Stone Walls</h1>
+            
+            <p>
+                You watch Tim's car disappear into the gray morning mist. You told him you were too busy—deadlines, meetings, the reality of a life that makes sense. You choose the comfort of the neon lights and the crowded streets over his "ghost stories" and dusty diaries.
+            </p>
+
+            <p>
+                For weeks, you feel vindicated. But then, the postcards stop coming. Then the calls. You sit in your quiet apartment, the humming of the refrigerator the only sound in the dark. 
+            </p>
+
+            <p>
+                You didn't know then that Tim wouldn't just find the truth—he would become part of it. You didn't know that by staying, you left your friend to a fate worse than death. <span class="highlight">It was the biggest mistake of your life.</span>
+            </p>
+
+            <p>
+                Now, when the wind howls between the city skyscrapers, it sounds less like the wind... and more like a name being called from the mountains.
+            </p>
+
+            <nav class="options">
+                <a href="escapegame.html" class="choice">THE END? (RETRY)</a>
+            </nav>
+        </div>
+    </div>
+
+</body>
+</html>

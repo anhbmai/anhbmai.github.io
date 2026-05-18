@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wrong Choice - A Heavy Silence</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%; width: 100%;
+            overflow: hidden; background-color: #050505; color: #a39382;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .game-scene {
+            /* Background set to a dim, claustrophobic inn room */
+            background-image: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.7)), url('morning.jpg');
+            background-size: cover; background-position: center;
+            height: 100vh; width: 100%;
+            display: flex; flex-direction: column; justify-content: flex-end; align-items: center;
+            position: relative;
+        }
+
+        .dialogue-container {
+            width: 90%; max-width: 800px; background: rgba(12, 8, 5, 0.96); border: 1px solid #3d352a;
+            padding: 35px; margin-bottom: 60px; z-index: 100; cursor: pointer;
+            box-shadow: 0 0 30px #000;
+        }
+
+        #speaker-name {
+            font-family: 'IM Fell English SC', serif; color: #8c7d6b;
+            font-size: 1.3rem; border-left: 3px solid #5c1a1a;
+            padding-left: 10px; margin-bottom: 15px;
+        }
+
+        #dialogue-text {
+            font-size: 1.45rem; line-height: 1.5; min-height: 80px;
+        }
+
+        .hint {
+            margin-top: 20px; text-align: right; font-size: 0.9rem;
+            color: #4a4136; font-style: italic;
+        }
+
+        .fade-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: black; opacity: 0; pointer-events: none; transition: opacity 2s ease;
+            z-index: 1000;
+        }
+
+        .final-options {
+            display: none; margin-top: 25px; flex-direction: column; gap: 10px;
+        }
+
+        .retry-btn {
+            background: transparent; border: 1px solid #4a3b2c; color: #8c7d6b;
+            padding: 10px; font-family: 'IM Fell English SC', serif; cursor: pointer;
+            text-align: center; text-decoration: none;
+        }
+        .retry-btn:hover { border-color: #801a1a; color: #baab9a; }
+    </style>
+</head>
+<body>
+
+    <div id="fade" class="fade-overlay"></div>
+
+    <div class="game-scene">
+        <div class="dialogue-container" id="dialogue-box">
+            <div id="speaker-name">Narrator</div>
+            <div id="dialogue-text">The accusation leaves your lips, but the air in the room doesn't clear. The villagers nod, their faces unreadable masks of local justice.</div>
+            
+            <div class="final-options" id="retry-ui">
+                <a href="connecting-dots.html" class="retry-btn">RE-EXAMINE THE EVIDENCE (RETRY)</a>
+            </div>
+
+            <div class="hint" id="interaction-hint">Press [ Enter ] or Click Box to continue</div>
+        </div>
+    </div>
+
+    <script>
+        const story = [
+            {
+                speaker: "You",
+                text: "You keep the secret to yourself as you walk back to the inn. The investigation is 'closed,' yet your gut twists with every step."
+            },
+            {
+                speaker: "Narrator",
+                text: "The wooden floorboards of the inn creak under your weight. You pack your bags, hoping to catch the first bus out by tomorrow morning."
+            },
+            {
+                speaker: "You",
+                text: "Was it the right choice? The timeline... the Factor VIII... the missing diary... something is still missing. A shadow remains in the corner of your mind."
+            },
+            {
+                speaker: "Narrator",
+                text: "You lie in the dark, staring at the ceiling. The village is quiet—too quiet. You have survived the night, but the killer is still out there, watching the road. Waiting."
+            }
+        ];
+
+        let index = 0;
+
+        function play() {
+            if (index < story.length) {
+                const step = story[index];
+                document.getElementById('speaker-name').innerText = step.speaker;
+                document.getElementById('dialogue-text').innerText = step.text;
+                index++;
+            } else {
+                document.getElementById('interaction-hint').style.display = 'none';
+                document.getElementById('retry-ui').style.display = 'flex';
+                document.getElementById('fade').style.opacity = '0.6';
+            }
+        }
+
+        document.getElementById('dialogue-box').onclick = play;
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Enter") play();
+        });
+    </script>
+</body>
+</html>

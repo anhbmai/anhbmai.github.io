@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Secret Unfolded - True Ending</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Crimson+Text:ital,wght@0,400;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%; width: 100%;
+            overflow: hidden; background-color: #050505; color: #a39382;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .game-scene {
+            /* Using a darker, more dramatic morning background or cottage interior */
+            background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.6)), url('cottage.jpg');
+            background-size: cover; background-position: center;
+            height: 100vh; width: 100%;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            position: relative;
+        }
+
+        /* --- Resolution Box --- */
+        .resolution-container {
+            width: 85%;
+            max-width: 750px;
+            background: rgba(15, 12, 10, 0.95);
+            border: 2px solid #5c1a1a;
+            padding: 40px;
+            box-shadow: 0 0 50px #000, inset 0 0 30px rgba(92, 26, 26, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        #speaker-name {
+            font-family: 'IM Fell English SC', serif;
+            color: #debc85;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 3px;
+            border-bottom: 1px solid #3d352a;
+            padding-bottom: 15px;
+        }
+
+        #dialogue-text {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            min-height: 200px;
+            color: #c4b49e;
+        }
+
+        .hint {
+            margin-top: 30px;
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1rem;
+            color: #5c1a1a;
+            font-style: italic;
+            font-weight: bold;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* --- Final Choice --- */
+        .final-decision {
+            display: none;
+            margin-top: 30px;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .end-btn {
+            background: linear-gradient(180deg, #2b0a0a 0%, #1a0505 100%);
+            border: 1px solid #5c1a1a;
+            color: #baab9a;
+            padding: 15px;
+            font-family: 'IM Fell English SC', serif;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .end-btn:hover {
+            color: #fff;
+            background: #5c1a1a;
+            box-shadow: 0 0 20px rgba(255,0,0,0.2);
+        }
+
+        .success-text {
+            color: #4e8c4e;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-scene">
+        <div class="resolution-container" id="box">
+            <div id="speaker-name">CASE SOLVED</div>
+            <div id="dialogue-text">You have unfolded this village's dark secret...</div>
+            
+            <div class="final-decision" id="final-ui">
+                <button class="end-btn" onclick="alert('The cycle of blood continues. You wait for the doctor in the shadows of the tavern...')">GET REVENGE FOR TIM</button>
+                <button class="end-btn" onclick="alert('You board the first bus out of the village as the police arrive. Some secrets are better left buried.')">ESCAPE THE VILLAGE</button>
+            </div>
+
+            <div class="hint" id="hint-text">Press [ Enter ] or Click Box to continue</div>
+        </div>
+    </div>
+
+    <script>
+        const revelations = [
+            {
+                title: "THE KILLER: DR. IONESCU",
+                text: "The mystery unraveled with the <strong>Factor VIII</strong>. Tim shared a medical curse with his grandfather: blood that would not clot. The doctor realized this would provide an alibi—who would suspect a man of being killed hours ago if he was still 'bleeding' freshly at midnight?"
+            },
+            {
+                title: "THE MOTIVE",
+                text: "Dr. Ionescu was Werner Havardi’s partner in crime. Years ago, they engineered the theft of Communist party funds. When Werner’s conscience began to plague him, Ionescu murdered him to ensure silence. He got away with it... until Tim arrived with Werner's <strong>incriminating diary.</strong>"
+            },
+            {
+                title: "THE NIGHT OF THE MURDER",
+                text: "Ionescu went to the cottage before the rain started (accounting for the lack of footprints) to retrieve the diary. When Tim became suspicious, murder was the only option. He mopped the blood and moved the body to the river, meticulously slashing the veins to make it look like a fresh 'werewolf' attack."
+            },
+            {
+                title: "THE END",
+                text: "The truth is out. Now, escape is no longer your priority. The doctor is still in the village, confident in his deception. Will you get revenge for Tim, or run?"
+            }
+        ];
+
+        let index = 0;
+
+        function nextStep() {
+            if (index < revelations.length) {
+                const step = revelations[index];
+                document.getElementById('speaker-name').innerHTML = step.title;
+                document.getElementById('dialogue-text').innerHTML = step.text;
+                index++;
+            } else {
+                document.getElementById('hint-text').style.display = 'none';
+                document.getElementById('final-ui').style.display = 'flex';
+                document.getElementById('box').onclick = null;
+            }
+        }
+
+        document.getElementById('box').onclick = nextStep;
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Enter") nextStep();
+        });
+    </script>
+</body>
+</html>

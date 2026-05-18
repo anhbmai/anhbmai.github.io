@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Investigation - Connecting the Dots</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%; width: 100%;
+            overflow-y: auto; background-color: #050505; color: #a39382;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .game-scene {
+            background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.6)), url('cottage.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            min-height: 100vh; width: 100%;
+            display: flex; flex-direction: column; align-items: center; padding: 40px 20px;
+        }
+
+        .header-title {
+            font-family: 'IM Fell English SC', serif;
+            color: #5c1a1a; font-size: 2.5rem; text-align: center;
+            margin-bottom: 40px; text-shadow: 0 0 15px #000;
+        }
+
+        .deduction-container {
+            width: 100%; max-width: 850px; display: flex; flex-direction: column; gap: 20px;
+        }
+
+        details {
+            background: rgba(22, 17, 12, 0.95);
+            border: 1px solid #3d352a; border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        details[open] { border-color: #801a1a; box-shadow: 0 0 20px rgba(128, 26, 26, 0.2); }
+
+        summary {
+            padding: 20px; font-family: 'IM Fell English SC', serif;
+            font-size: 1.4rem; color: #8c7d6b; cursor: pointer;
+            list-style: none; display: flex; justify-content: space-between; align-items: center;
+        }
+
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '▼'; font-size: 0.8rem; color: #5c1a1a; }
+        details[open] summary::after { content: '▲'; }
+
+        .content-inner {
+            padding: 0 20px 20px 20px; border-top: 1px dashed #3d352a;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .info-bit { margin: 15px 0; line-height: 1.5; font-size: 1.15rem; border-left: 2px solid #5c1a1a; padding-left: 15px; }
+        .quote-text { font-style: italic; color: #c4b49e; display: block; margin-bottom: 5px; font-weight: bold; }
+        
+        .compare-btn {
+            background: #2a1a12; color: #c4b49e; border: 1px solid #5c1a1a;
+            padding: 12px 24px; font-family: 'IM Fell English SC', serif;
+            cursor: pointer; margin-top: 15px; transition: 0.3s; width: 100%;
+        }
+        .compare-btn:hover { background: #5c1a1a; color: white; }
+
+        .highlight-red { color: #801a1a; font-weight: bold; }
+
+        /* --- Final Accusation --- */
+        .accusation-section {
+            margin-top: 60px; text-align: center; display: none; width: 100%; max-width: 800px; padding-bottom: 80px;
+        }
+
+        .choices-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px;
+        }
+
+        .branch-option-btn {
+            background: linear-gradient(180deg, #1c140e 0%, #0d0906 100%);
+            border: 1px solid #4a3b2c; color: #baab9a; padding: 18px;
+            font-family: 'Crimson Text', serif; font-size: 1.2rem; cursor: pointer;
+            transition: all 0.2s; border-radius: 3px;
+        }
+
+        .branch-option-btn:hover {
+            border-color: #8c2020; color: #f0e6d2;
+            background: linear-gradient(180deg, #2b1d14 0%, #140e0a 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-scene">
+        <h1 class="header-title">The Investigation Board</h1>
+
+        <div class="deduction-container">
+            <details ontoggle="checkOpened()">
+                <summary>Official Testimonies: The Villagers & The Boys</summary>
+                <div class="content-inner">
+                    <div class="info-bit">
+                        <span class="quote-text">Dr. Ionescu:</span>
+                        "I left the tavern about 10:30, going straight to my house. Shortly before eleven, young Tristan came for me. His mother was giving birth. I was at their cottage until sometime after midnight, when the mayor came to fetch me."
+                    </div>
+                    <div class="info-bit">
+                        <span class="quote-text">Gregor Pularis:</span>
+                        "When the rains started, I ran for home. My wife was already asleep. I put on a kettle for tea and had a cup. I was just changing out of my wet clothes when the boys knocked on my door."
+                    </div>
+                    <div class="info-bit">
+                        <span class="quote-text">Marie Pularis:</span>
+                        "My cottage is far from the tavern. Halfway there, I changed my mind and ducked into the church to wait out the rain. My husband says I came in a few minutes after midnight."
+                    </div>
+                    <div class="info-bit">
+                        <span class="quote-text">Eric Havardi:</span>
+                        "I ran from the tavern to my own cottage. It is down the road from where my cousin was staying. I could see his window; the light was flickering in his fireplace. I heard nothing until the wolves started howling."
+                    </div>
+                    <div class="info-bit">
+                        <span class="quote-text">The Two Boys (Matthias & Companion):</span>
+                        "We checked the mud outside. <span class="highlight-red">No human footprints. Just wolf prints.</span> The American was on the floor. Blood was <strong>glistening in the wound.</strong> It had to be fresh, no more than fifteen minutes."
+                    </div>
+                    <button class="compare-btn" onclick="showComparison()">Compare Activity Timeline</button>
+                </div>
+            </details>
+
+            <details ontoggle="checkOpened()">
+                <summary>Medical Report & Cause of Death</summary>
+                <div class="content-inner">
+                    <div class="info-bit">
+                        <strong>Autopsy Summary:</strong> Cause of death was a cut jugular vein by a jagged knife or claws. Radial arteries, femoral veins, and subclavian arteries were all severed <span class="highlight-red">after death</span>.
+                    </div>
+                    <div class="info-bit">
+                        <strong>The Conflict:</strong> The militia report says the body was in the water for <span class="highlight-red">at least six hours</span>. But the boys saw <span class="highlight-red">liquid, glistening blood</span> at the cottage at midnight.
+                    </div>
+                </div>
+            </details>
+
+            <details ontoggle="checkOpened()">
+                <summary>Evidence & Missing Objects</summary>
+                <div class="content-inner">
+                    <div class="info-bit">
+                        <strong>Missing Items:</strong> Tim traveled with his grandfather's <span class="highlight-red">Diary</span>. When the officer gave you the list, the diary was missing.
+                    </div>
+                    <div class="info-bit">
+                        <strong>The Hidden Illness:</strong> Tim had Factor VIII in his kit. He was a <span class="highlight-red">Hemophiliac</span>. His blood physically could not clot—any wound would be fatal without medicine.
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        <div class="accusation-section" id="accusation-ui">
+            <h2 class="header-title" style="font-size: 1.8rem;">Who killed Tim Johnson?</h2>
+            <div class="choices-grid">
+                <button class="branch-option-btn" onclick="location.href='silenced.html'">Gregor Pularis (The Mayor)</button>
+                <button class="branch-option-btn" onclick="location.href='silenced.html'">Eric Havardi (The Cousin)</button>
+                <button class="branch-option-btn" onclick="location.href='silenced.html'">Marie Pularis (The Gossip)</button>
+                <button class="branch-option-btn" onclick="location.href='revenge-path.html'">Dr. Ionescu (The Physician)</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let opened = [false, false, false];
+
+        function checkOpened() {
+            const details = document.querySelectorAll('details');
+            details.forEach((el, i) => { if (el.open) opened[i] = true; });
+
+            if (opened.every(s => s === true)) {
+                document.getElementById('accusation-ui').style.display = 'block';
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        }
+
+        function showComparison() {
+            alert(
+                "TIMELINE COMPARISON:\n\n" +
+                "10:30 PM - Dr. Ionescu leaves Tavern.\n" +
+                "11:00 PM - Doctor fetched for birth.\n" +
+                "11:45 PM - Tim Johnson leaves Tavern.\n" +
+                "12:00 AM - Storm starts; Marie arrives home; Eric sees Tim's fire.\n" +
+                "12:45 AM - Boys find Tim; Blood is LIQUID (Freshly killed).\n\n" +
+                "ANOMALY: The autopsy says the body was in the water for 6 hours by morning. But at midnight, he was still in the cottage bleeding fresh blood. Someone is lying about the time of death."
+            );
+        }
+    </script>
+</body>
+</html>

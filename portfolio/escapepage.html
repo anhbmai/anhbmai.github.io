@@ -12,13 +12,12 @@
         body {
             margin: 0;
             font-family: 'Quicksand', sans-serif;
-            /* Pastel Red Gradient */
             background: linear-gradient(135deg, #ffebee, #ffcdd2, #ef9a9a);
             min-height: 100vh;
             color: #444;
         }
 
-        /* STICKY NAVBAR (Matches Sweet Treat Chase) */
+        /* STICKY NAVBAR */
         .navbar-custom {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 20px 0;
@@ -59,7 +58,7 @@
         }
 
         .nav-links-container a:hover, .nav-links-container a.active {
-            color: #c62828; /* Thematic Red */
+            color: #c62828;
         }
 
         /* CONTENT STYLING */
@@ -82,6 +81,30 @@
             margin-bottom: 15px;
         }
 
+        /* TRY IT YOURSELF BUTTON */
+        .try-it-btn {
+            background-color: #c62828;
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+        }
+
+        .try-it-btn:hover {
+            background-color: #b71c1c;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(198, 40, 40, 0.4);
+        }
+
         /* GAME EMBED */
         .creative-row {
             display: flex;
@@ -91,16 +114,16 @@
         }
 
         .iframe-box {
-            width: 800px;
+            width: 850px;
             height: 600px;
-            background: #111;
+            background: #000;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            border: 4px solid white;
+            border: 5px solid white;
         }
 
-        /* IMAGE GALLERY */
+        /* SCREENSHOT GALLERY */
         .screenshot-grid {
             display: flex;
             justify-content: center;
@@ -112,7 +135,7 @@
         .screenshot-card {
             width: 280px;
             background: white;
-            padding: 10px;
+            padding: 12px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
@@ -126,15 +149,15 @@
         }
 
         .screenshot-card p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
             margin: 0;
-            color: #555;
+            color: #333;
         }
 
         .summary-text {
-            max-width: 800px;
-            margin: 0 auto 40px auto;
+            max-width: 850px;
+            margin: 0 auto 30px auto;
             line-height: 1.8;
             font-size: 1.1rem;
         }
@@ -167,47 +190,44 @@
                 <p>
                     Embark on a dark RPG adventure set in a secluded Transylvanian village. 
                     After your friend Tim discovers a cryptic family diary, you travel deep into the mountains 
-                    only to find yourselves trapped in a town gripped by folklore and fear. 
-                </p>
-                <p>
-                    <strong>Interact with mysterious NPCs</strong> to peel back layers of deception, 
-                    <strong>collect hidden clues</strong> to fill your evidence log, and 
-                    <strong>solve the ultimate mystery</strong> of Werner’s legacy before the shadows close in. 
-                    Every choice determines if you escape or become part of the village's grim history.
+                    only to find yourselves trapped in a settlement where every NPC holds a secret and the shadows 
+                    hide a horrifying truth.
                 </p>
             </div>
+
+            <a href="https://anhbmai.github.io/portfolio/escapegame%20/escapegame.html" target="_blank" class="try-it-btn">
+                Try it yourself ->
+            </a>
 
             <div class="creative-row">
                 <div class="iframe-box">
                     <iframe src="https://anhbmai.github.io/portfolio/escapegame%20/escapegame.html" 
                             width="100%" 
                             height="100%" 
-                            frameborder="0" 
-                            allowfullscreen></iframe>
+                            frameborder="0"></iframe>
                 </div>
             </div>
 
             <hr class="my-5">
 
-            <h3>Atmosphere & Exploration</h3>
+            <h3>Game Mechanics & Atmosphere</h3>
+            <p>Gather clues, interrogate the suspicious locals, and find your way out.</p>
+            
             <div class="screenshot-grid">
                 <div class="screenshot-card">
-                    <img src="game1.png" alt="Villager Interaction">
-                    <p>Cryptic Conversations</p>
+                    <img src="game1.jpg" alt="Villager Interaction">
+                    <p>Interrogating Locals</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="game2.png" alt="Discovery">
-                    <p>Evidence Gathering</p>
+                    <img src="game2.jpg" alt="Evidence Log">
+                    <p>Connecting the Clues</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="game3.png" alt="Environment">
-                    <p>A Village Lost in Time</p>
+                    <img src="game3.jpg" alt="The Village">
+                    <p>Atmospheric Exploration</p>
                 </div>
             </div>
 
-            <div class="mt-5">
-                <p class="small text-muted">Developed as an interactive narrative experience.</p>
-            </div>
         </div>
     </div>
 

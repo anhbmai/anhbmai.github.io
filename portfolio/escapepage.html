@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Carpathian Shadow | Anh Mai</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            /* Pastel Red Gradient */
+            background: linear-gradient(135deg, #ffebee, #ffcdd2, #ef9a9a);
+            min-height: 100vh;
+            color: #444;
+        }
+
+        /* STICKY NAVBAR (Matches Sweet Treat Chase) */
+        .navbar-custom {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(8px);
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-decoration: none;
+            color: #000;
+            display: block;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .nav-links-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links-container a {
+            text-decoration: none;
+            color: #666;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links-container a:hover, .nav-links-container a.active {
+            color: #c62828; /* Thematic Red */
+        }
+
+        /* CONTENT STYLING */
+        .main-container {
+            padding-top: 160px;
+            padding-bottom: 60px;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 30px;
+            padding: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* GAME EMBED */
+        .creative-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .iframe-box {
+            width: 800px;
+            height: 600px;
+            background: #111;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 4px solid white;
+        }
+
+        /* IMAGE GALLERY */
+        .screenshot-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .screenshot-card {
+            width: 280px;
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .screenshot-card p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+            color: #555;
+        }
+
+        .summary-text {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar-custom">
+        <div class="container">
+            <a href="home.html" class="brand-name">ANH MAI</a>
+            <div class="nav-links-container">
+                <a href="home.html">HOME</a>
+                <a href="glitch.html">GLITCH</a>
+                <a href="meme.html">MASHUP</a>
+                <a href="netart.html">NET ART</a>
+                <a href="minecraft.html">MINECRAFT</a>
+                <a href="diypts.html">DIY PTS</a>
+                <a href="chasegame.html">CHASE GAME</a>
+                <a href="escapepage.html" class="active">ESCAPE GAME</a>
+                <a href="otherart.html">OTHER ART</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-container">
+        <div class="glass-panel text-center">
+            <h1>The Carpathian Shadow 🕯️</h1>
+            
+            <div class="summary-text">
+                <p>
+                    Embark on a dark RPG adventure set in a secluded Transylvanian village. 
+                    After your friend Tim discovers a cryptic family diary, you travel deep into the mountains 
+                    only to find yourselves trapped in a town gripped by folklore and fear. 
+                </p>
+                <p>
+                    <strong>Interact with mysterious NPCs</strong> to peel back layers of deception, 
+                    <strong>collect hidden clues</strong> to fill your evidence log, and 
+                    <strong>solve the ultimate mystery</strong> of Werner’s legacy before the shadows close in. 
+                    Every choice determines if you escape or become part of the village's grim history.
+                </p>
+            </div>
+
+            <div class="creative-row">
+                <div class="iframe-box">
+                    <iframe src="https://anhbmai.github.io/portfolio/escapegame%20/escapegame.html" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <h3>Atmosphere & Exploration</h3>
+            <div class="screenshot-grid">
+                <div class="screenshot-card">
+                    <img src="game1.png" alt="Villager Interaction">
+                    <p>Cryptic Conversations</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="game2.png" alt="Discovery">
+                    <p>Evidence Gathering</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="game3.png" alt="Environment">
+                    <p>A Village Lost in Time</p>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <p class="small text-muted">Developed as an interactive narrative experience.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
